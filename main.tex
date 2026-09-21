@@ -4,6 +4,8 @@
 
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
+% Keep figures after their declaration; the hook starts in column two.
+\usepackage{flafter}
 \usepackage{amsmath,amssymb}
 \usepackage{booktabs}
 \usepackage{cite}
@@ -11,8 +13,9 @@
 
 % Replace every placeholder before submission.
 \title{\LARGE\bf Your Paper Title: A Concise Description of Your Idea}
-\author{Your Name\\Your Department, Your University\\
-Graduate Course Final Exam -- Research Paper}
+\author{Your Name%
+\thanks{\raggedright Your Department, Your University.
+Email: \texttt{your.email@example.com}.}}
 
 \begin{document}
 \maketitle
@@ -20,6 +23,9 @@ Graduate Course Final Exam -- Research Paper}
 \pagestyle{empty}
 
 \input{src/abstract}
+% First-page right-column hook, followed by a page-two full-width overview.
+\input{figures/hook}
+\input{figures/overview}
 \input{src/introduction}
 \input{src/related_work}
 \input{src/problem_formulation}

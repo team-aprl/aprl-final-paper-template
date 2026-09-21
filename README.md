@@ -11,7 +11,7 @@ IEEE 스타일의 letter 용지, 10pt, 2단 레이아웃을 사용합니다.
 2. 자신의 저장소에서 **Code → Download ZIP**으로 내려받습니다.
 3. Overleaf에서 **New Project → Upload Project**로 ZIP을 올립니다.
 4. Main document를 `main.tex`, Compiler를 **pdfLaTeX**로 설정하고 Recompile을 누릅니다.
-5. 제목과 저자를 바꾸고 `src/`의 각 문단을 자신의 글로 교체합니다.
+5. 제목과 저자, `\thanks` 안의 소속·이메일을 바꾸고 `src/`의 각 문단을 자신의 글로 교체합니다.
 
 `main.pdf`는 더미 양식의 미리보기입니다. 수정한 내용은 다시 컴파일해야 반영됩니다.
 
@@ -19,7 +19,7 @@ IEEE 스타일의 letter 용지, 10pt, 2단 레이아웃을 사용합니다.
 
 | 파일 | 역할 |
 | --- | --- |
-| `main.tex` | 제목·저자, 패키지, 본문 연결 |
+| `main.tex` | 제목·저자, 첫 페이지 좌하단 소속·이메일 각주, 패키지, 본문 연결 |
 | `src/abstract.tex` | Abstract |
 | `src/introduction.tex` | Introduction, 연구 질문과 기여 |
 | `src/related_work.tex` | Related Work |
@@ -28,7 +28,9 @@ IEEE 스타일의 letter 용지, 10pt, 2단 레이아웃을 사용합니다.
 | `src/experiments.tex` | 실험 설정과 결과 |
 | `src/discussion.tex` | 해석과 한계 |
 | `src/conclusion.tex` | 결론 |
-| `figures/` | 외부 이미지 없이 컴파일되는 더미 그림 2개 |
+| `figures/hook.tex` | Fig. 1: 첫 페이지 우상단의 핵심 아이디어 그림 |
+| `figures/overview.tex` | Fig. 2: 두 번째 페이지 상단의 양단 너비 방법 개요 |
+| `figures/qualitative.tex` | Fig. 3: 정성적 비교 더미 그림 |
 | `tables/results.tex` | 수치를 채우지 않은 더미 결과표 |
 | `references.bib` | 가상 참고문헌 2개 — 실제 논문으로 교체 필수 |
 | `ieeeconf.cls` | 레이아웃용 공용 LaTeX 클래스 |
@@ -54,6 +56,10 @@ Tectonic 사용 시 `tectonic main.tex`로도 빌드할 수 있습니다.
 `IEEEtran.bst`는 TeX 배포판의 IEEEtran 패키지에서 제공됩니다.
 
 ## 작성 및 제출 전 확인
+
+그림은 `flafter`로 선언 위치보다 앞에 나오지 않도록 설정했습니다.
+현재 더미 본문에서는 Fig. 1이 첫 페이지 우상단, Fig. 2가 두 번째 페이지 상단에 놓입니다.
+본문이나 그림 크기를 크게 바꾸면 LaTeX의 자동 배치가 달라질 수 있으므로 최종 PDF를 확인하세요.
 
 - 제목·이름·소속을 교체하고 안내 문장과 `DUMMY`, `Placeholder`, `[replace]`를 모두 제거합니다.
 - 연구 질문 → 선행연구의 한계 → 제안 방법 → 검증 → 결론이 연결되도록 작성합니다.
