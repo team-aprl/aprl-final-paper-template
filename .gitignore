@@ -1,0 +1,21 @@
+# LaTeX intermediate files
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.xdv
+*.nav
+*.snm
+build/
+# Editor and OS files
+.DS_Store
+Thumbs.db
+*.swp
+*~

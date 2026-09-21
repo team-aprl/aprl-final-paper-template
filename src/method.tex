@@ -1,0 +1,27 @@
+\section{Proposed Method}
+\label{sec:method}
+\subsection{Overview}
+Describe the complete procedure from input to output. Refer to
+Fig.~\ref{fig:overview} and explain the role of each component.
+Separate your own contribution from standard components or reused methods.
+
+\subsection{Main Component}
+Explain the central mechanism in enough detail for another student to
+understand and implement it. Define any parameters, dependencies, and
+design choices. Explain why those choices follow from the problem.
+
+If an optimization objective is relevant, use the following layout as an
+example and replace the expression with your actual objective:
+\begin{equation}
+  \theta^{\star}=\arg\min_{\theta}
+  \frac{1}{N}\sum_{i=1}^{N}\ell\bigl(f_{\theta}(x_i),y_i\bigr).
+  \label{eq:objective}
+\end{equation}
+Here, $N$ is the number of examples, $(x_i,y_i)$ is an input--target pair,
+and $\ell$ is a loss function. This generic equation is not a proposed
+research contribution and may be deleted.
+
+\subsection{Implementation Details}
+Report the settings needed to reproduce your method, such as preprocessing,
+parameter selection, software dependencies, and computational resources.
+For a conceptual proposal, distinguish planned steps from implemented ones.

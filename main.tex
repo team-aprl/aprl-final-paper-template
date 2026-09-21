@@ -1,0 +1,33 @@
+\documentclass[letterpaper,10pt,conference]{ieeeconf}
+\IEEEoverridecommandlockouts
+\overrideIEEEmargins
+
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{cite}
+\usepackage[hidelinks]{hyperref}
+
+% Replace every placeholder before submission.
+\title{\LARGE\bf Your Paper Title: A Concise Description of Your Idea}
+\author{Your Name\\Your Department, Your University\\
+Graduate Course Final Exam -- Research Paper}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+
+\input{src/abstract}
+\input{src/introduction}
+\input{src/related_work}
+\input{src/problem_formulation}
+\input{src/method}
+\input{src/experiments}
+\input{src/discussion}
+\input{src/conclusion}
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+\end{document}
