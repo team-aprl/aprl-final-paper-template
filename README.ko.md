@@ -15,7 +15,7 @@ IEEE 스타일의 letter 용지, 10pt, 2단 레이아웃을 사용합니다.
 4. Main document를 `main.tex`, Compiler를 **pdfLaTeX**로 설정하고 Recompile을 누릅니다.
 5. 제목과 저자, `\thanks` 안의 소속·이메일을 바꾸고 `src/`의 각 문단을 자신의 글로 교체합니다.
 
-`main.pdf`는 약 4쪽 분량의 더미 양식 미리보기입니다. 수정한 내용은 다시 컴파일해야 반영됩니다.
+`main.pdf`는 확장된 더미 양식 미리보기입니다. 분량은 4쪽으로 제한하지 않습니다. 수정한 내용은 다시 컴파일해야 반영됩니다.
 
 ## 파일 구성
 
@@ -38,7 +38,7 @@ IEEE 스타일의 letter 용지, 10pt, 2단 레이아웃을 사용합니다.
 | `tables/results.tex` | 수치를 채우지 않은 더미 결과표 |
 | `tables/component_ablation.tex` | Table II: 구성요소 A/B 제거 ablation |
 | `tables/design_ablation.tex` | Table III: 설계 대안별 성능·비용 ablation |
-| `references.bib` | 가상 참고문헌 2개 — 실제 논문으로 교체 필수 |
+| `references.bib` | 본문 역할에 맞춰 인용한 가상 참고문헌 15개 — 실제 문헌으로 교체 필수 |
 | `ieeeconf.cls` | 레이아웃용 공용 LaTeX 클래스 |
 
 ## 로컬 컴파일
@@ -62,6 +62,13 @@ Tectonic 사용 시 `tectonic main.tex`로도 빌드할 수 있습니다.
 `IEEEtran.bst`는 TeX 배포판의 IEEEtran 패키지에서 제공됩니다.
 
 ## 작성 및 제출 전 확인
+
+참고문헌 15개는 배경 서베이, 응용 동기, 기초·대안 방법, 혼합 접근,
+표현 방식, 최적화, 소프트웨어, 데이터셋, 평가 지표, 베이스라인,
+재현성, ablation 설계, 강건성, 한계라는 인용 역할을 보여 줍니다.
+Introduction, Related Work, Method, Experiments, Discussion의 관련 문맥에
+분산해 인용했습니다. 모든 항목은 가상 문헌임을 명시했으며,
+실제 연구의 근거나 추천 논문 목록이 아닙니다.
 
 그림은 `flafter`로 선언 위치보다 앞에 나오지 않도록 설정했습니다.
 현재 더미 본문에서는 Fig. 1이 첫 페이지 우상단, Fig. 2가 두 번째 페이지 상단에 놓입니다.

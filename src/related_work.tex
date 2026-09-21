@@ -3,17 +3,64 @@
 \subsection{Research Direction A}
 Group relevant prior studies by the ideas they share. Explain the problem
 they solve, their key assumptions, and the evidence they provide.
-The citation here demonstrates formatting only~\cite{placeholderA}.
-Replace it with a real paper that you have read.
+Start with a foundational method~\cite{foundational} and use a survey to
+explain how that method fits into the wider field~\cite{survey}.
+Replace these fictional entries with real papers you have read.
+
+Describe the assumptions that make this family of methods suitable for its
+target setting. Identify the information it requires and the type of output
+it produces. When discussing a shortcoming, distinguish a limitation stated
+by the original authors from your own interpretation. Explain the evidence
+behind that interpretation and avoid extrapolating beyond the study's scope.
 
 \subsection{Research Direction B}
 Describe an alternative family of approaches and compare its strengths
 and limitations with the first group. Use consistent comparison criteria,
 such as required inputs, applicability, or evaluation conditions.
-This second citation is also fictional~\cite{placeholderB}.
+Use the alternative-method citation for the approach itself~\cite{alternative}
+and the representation citation for the information it operates
+on~\cite{representation}. This separation demonstrates how different sources
+can support distinct parts of a comparison.
+
+Compare the two directions under the same criteria. A method that uses
+additional input information may not be directly comparable to one designed
+for a more constrained setting. Explain such differences before discussing
+performance. If the available studies use different protocols, describe
+those differences rather than treating their reported values as equivalent.
+
+\subsection{Hybrid Approaches and Shared Components}
+Some papers combine ideas from multiple research directions. Use a source
+on a hybrid approach to discuss that relationship~\cite{hybrid}, then identify
+the components it shares with earlier work~\cite{foundational,alternative}.
+Explain whether the combination changes the assumptions, the computational
+requirements, or the type of problem that can be addressed.
+
+When your paper reuses a representation or solver, acknowledge those
+dependencies explicitly~\cite{representation,optimization}. Distinguish the
+origin of a method from the implementation used in your experiments. A
+software reference~\cite{software} credits the implementation, but it does
+not replace a citation to the underlying scientific idea.
+
+\subsection{Evaluation Practices}
+Review how related studies evaluate their claims. Dataset documentation
+and metric definitions serve different purposes~\cite{dataset,metric}:
+the former describes the evaluation material, while the latter explains
+what a reported number means. Discuss whether the protocol measures the
+capability that your paper aims to improve.
+
+Identify the most relevant baseline~\cite{baseline} and explain why it is
+an informative comparator. Use guidance on repeated trials and controlled
+experiments to motivate your evaluation design~\cite{reproducibility,ablation}.
+Replace these placeholders with sources appropriate to your discipline;
+the template does not assume that one protocol fits every research problem.
 
 \subsection{Positioning of This Work}
 Explain precisely how your question or approach relates to the reviewed
 work. Identify what you reuse and what you change. A difference in method
 does not by itself establish an improvement; state what evidence would
 be needed to support that claim.
+Relate the proposed contribution to the closest method, rather than only
+to a broad survey~\cite{hybrid}. State which previously studied limitation
+your evaluation will address~\cite{limitations}, and which questions remain
+outside the paper. This paragraph should lead directly to the problem
+formulation and the comparisons used later in the manuscript.

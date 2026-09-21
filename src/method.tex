@@ -9,6 +9,9 @@ Separate your own contribution from standard components or reused methods.
 Explain the central mechanism in enough detail for another student to
 understand and implement it. Define any parameters, dependencies, and
 design choices. Explain why those choices follow from the problem.
+If the component uses an existing representation, cite its source when
+introducing the representation~\cite{representation}. State what is retained
+and what is changed instead of presenting reused elements as new work.
 
 If an optimization objective is relevant, use the following layout as an
 example and replace the expression with your actual objective:
@@ -20,11 +23,18 @@ example and replace the expression with your actual objective:
 Here, $N$ is the number of examples, $(x_i,y_i)$ is an input--target pair,
 and $\ell$ is a loss function. This generic equation is not a proposed
 research contribution and may be deleted.
+When adopting an established objective or solver, cite the relevant
+methodological source~\cite{optimization}. Explain how the adopted method
+is instantiated for your variables, constraints, and stopping criterion.
 
 \subsection{Implementation Details}
 Report the settings needed to reproduce your method, such as preprocessing,
 parameter selection, software dependencies, and computational resources.
 For a conceptual proposal, distinguish planned steps from implemented ones.
+Cite the software framework actually used~\cite{software} and report its
+version and relevant configuration in your final paper. Replace this
+placeholder with the library's recommended citation or a stable release
+reference, as appropriate.
 
 \subsection{Component Design and Information Flow}
 Figure~\ref{fig:component} provides a closer view of a single component.
@@ -63,3 +73,10 @@ termination criteria, and sources of randomness. Report how settings are
 selected and which settings remain fixed across experiments. Distinguish
 one-time preparation costs from per-input costs, and specify whether
 reported timing includes loading data and producing the final output.
+
+Explain the expected trade-off between task performance, computational cost,
+and complexity. For example, an additional component may require more memory
+or processing time. State the conditions under which that trade-off would
+be acceptable, and evaluate it under a documented protocol~\cite{reproducibility}.
+For a proposal, describe how cost would be measured instead of inventing
+timing or memory values.

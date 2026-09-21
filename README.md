@@ -15,7 +15,7 @@ All instructional paragraphs, figures, equations, tables, and citations are plac
 4. Set the main document to `main.tex` and the compiler to **pdfLaTeX**, then click Recompile.
 5. Update the title, author, and affiliation/email inside `\thanks`, then replace the paragraphs in `src/` with your own writing.
 
-`main.pdf` is a preview of the approximately four-page dummy paper. Recompile after editing to update the PDF.
+`main.pdf` is a preview of the expanded dummy paper. Its length is not capped at four pages. Recompile after editing to update the PDF.
 
 ## File structure
 
@@ -38,7 +38,7 @@ All instructional paragraphs, figures, equations, tables, and citations are plac
 | `tables/results.tex` | Placeholder results table with no measured values |
 | `tables/component_ablation.tex` | Table II: component-removal ablation for components A/B |
 | `tables/design_ablation.tex` | Table III: performance/cost ablation across design alternatives |
-| `references.bib` | Two fictional references — replace with real sources |
+| `references.bib` | 15 fictional references, cited by role throughout the text — replace with real sources |
 | `ieeeconf.cls` | Shared LaTeX class providing the paper layout |
 
 ## Build locally
@@ -62,6 +62,14 @@ You can also build with Tectonic using `tectonic main.tex`.
 The IEEEtran package in your TeX distribution provides `IEEEtran.bst`.
 
 ## Before submission
+
+The 15 references demonstrate different citation roles: background survey,
+application motivation, foundational and alternative methods, hybrid approaches,
+representations, optimization, software, datasets, metrics, baselines,
+reproducibility, ablation design, robustness, and limitations.
+They are integrated into the Introduction, Related Work, Method, Experiments,
+and Discussion. Every bibliography entry is explicitly fictional; none is
+intended as evidence or a real publication recommendation.
 
 The `flafter` package prevents figures from appearing before their declaration.
 With the current dummy content, Fig. 1 appears at the top right of page one, and Fig. 2 spans both columns at the top of page two.

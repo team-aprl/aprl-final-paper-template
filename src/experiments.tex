@@ -13,6 +13,9 @@ both. State the scope of the evaluation: what variation is represented and
 which operating conditions are absent. If the study uses simulations or
 constructed examples, explain how those conditions relate to the intended
 application and where the comparison may break down.
+Cite the dataset or study-material source here~\cite{dataset}. Record the
+release, subset, and split used so that the reference identifies the resource
+and the text identifies your specific use of it.
 
 Define each evaluation metric before interpreting its values. Give its
 units, preferred direction, aggregation rule, and treatment of failed or
@@ -20,6 +23,8 @@ missing outputs. Explain why the chosen metrics reflect the research
 question. If different metrics emphasize different aspects of performance,
 state how those differences will inform the interpretation rather than
 selecting only the metric that favors the proposed approach.
+Use the metric reference to credit an adopted definition~\cite{metric}.
+Describe any deviation from that definition and its effect on comparability.
 
 \subsection{Baselines and Comparison Protocol}
 Select baselines that test the contribution you actually claim. Include a
@@ -27,6 +32,15 @@ simple reference method where useful, and explain the relevance of more
 complex alternatives. Document whether baseline implementations are reused
 or reimplemented. Specify the settings used for each method and describe
 how the development budget is made comparable across approaches.
+Cite the baseline's original method~\cite{baseline} and any implementation
+dependency separately~\cite{software}. A comparison should make clear both
+what was evaluated and how it was implemented.
+
+State how many independent runs or evaluation units are used and why.
+Describe how variation is summarized and identify the unit over which an
+uncertainty interval is computed. Reference a suitable reproducibility
+protocol when one informs the design~\cite{reproducibility}, while reporting
+your actual settings rather than relying on the citation for those details.
 
 \subsection{Quantitative Evaluation}
 Table~\ref{tab:results} demonstrates a compact results table.
@@ -55,6 +69,9 @@ Define a common reference configuration and remove one component at a
 time. Keep the input data, evaluation protocol, and unrelated settings
 fixed. Explain what replaces a disabled component so that each variant
 remains a valid method rather than a broken implementation.
+Use an experimental-design reference to motivate the controlled comparison
+where relevant~\cite{ablation}. Explain how the design separates the effect
+of the component from changes in the evaluation procedure.
 
 \input{tables/component_ablation}
 
@@ -71,6 +88,8 @@ alternative design choices. Unlike removing a component, this study changes
 how a component operates. Specify one choice at a time and hold the rest of
 the configuration fixed. Replace the generic options with meaningful
 alternatives for your method, such as an aggregation rule or representation.
+Link these alternatives to the method literature~\cite{representation,hybrid}
+so that the reader understands why they are meaningful choices to test.
 
 \input{tables/design_ablation}
 
@@ -86,6 +105,8 @@ or robustness study. Its axes are intentionally empty; the figure contains
 no fabricated performance curve. Replace the labels with a named parameter
 and a defined metric, add units and values, and plot actual observations.
 Indicate uncertainty when repeated measurements are available.
+If an established robustness protocol guides the sweep, cite it at this
+point~\cite{robustness} and specify which parts of the protocol you follow.
 
 \input{figures/sensitivity}
 
