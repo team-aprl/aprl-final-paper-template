@@ -13,7 +13,7 @@ IEEE 스타일의 letter 용지, 10pt, 2단 레이아웃을 사용합니다.
 4. Main document를 `main.tex`, Compiler를 **pdfLaTeX**로 설정하고 Recompile을 누릅니다.
 5. 제목과 저자, `\thanks` 안의 소속·이메일을 바꾸고 `src/`의 각 문단을 자신의 글로 교체합니다.
 
-`main.pdf`는 더미 양식의 미리보기입니다. 수정한 내용은 다시 컴파일해야 반영됩니다.
+`main.pdf`는 약 4쪽 분량의 더미 양식 미리보기입니다. 수정한 내용은 다시 컴파일해야 반영됩니다.
 
 ## 파일 구성
 
@@ -30,8 +30,12 @@ IEEE 스타일의 letter 용지, 10pt, 2단 레이아웃을 사용합니다.
 | `src/conclusion.tex` | 결론 |
 | `figures/hook.tex` | Fig. 1: 첫 페이지 우상단의 핵심 아이디어 그림 |
 | `figures/overview.tex` | Fig. 2: 두 번째 페이지 상단의 양단 너비 방법 개요 |
-| `figures/qualitative.tex` | Fig. 3: 정성적 비교 더미 그림 |
+| `figures/component.tex` | Fig. 3: 개별 모듈의 내부 동작을 설명하는 상세도 |
+| `figures/qualitative.tex` | Fig. 4: 정성적 비교 더미 그림 |
+| `figures/sensitivity.tex` | Fig. 5: 파라미터 민감도·강건성 분석용 빈 플롯 |
 | `tables/results.tex` | 수치를 채우지 않은 더미 결과표 |
+| `tables/component_ablation.tex` | Table II: 구성요소 A/B 제거 ablation |
+| `tables/design_ablation.tex` | Table III: 설계 대안별 성능·비용 ablation |
 | `references.bib` | 가상 참고문헌 2개 — 실제 논문으로 교체 필수 |
 | `ieeeconf.cls` | 레이아웃용 공용 LaTeX 클래스 |
 

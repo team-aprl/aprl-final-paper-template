@@ -25,3 +25,55 @@ research contribution and may be deleted.
 Report the settings needed to reproduce your method, such as preprocessing,
 parameter selection, software dependencies, and computational resources.
 For a conceptual proposal, distinguish planned steps from implemented ones.
+
+\subsection{Component Design and Information Flow}
+Figure~\ref{fig:component} provides a closer view of a single component.
+Use this figure to explain an internal mechanism that would be too detailed
+for the system overview. Name the information entering each stage, describe
+the operation applied to it, and specify what is passed to the next stage.
+Keep terminology consistent between the diagram, equations, and text.
+
+\input{figures/component}
+
+Explain how intermediate representations are constructed. Describe whether
+they are computed independently for each input or depend on earlier inputs.
+If the method maintains a state, define its initialization and update rule.
+If it combines multiple sources of information, explain how their relative
+influence is determined. State what happens when an expected input is
+unavailable, incomplete, or outside the assumed operating range.
+
+Describe the interface between your proposed component and the rest of the
+system. A reader should be able to distinguish the component's inputs and
+outputs from implementation conveniences. Identify any quantities that are
+available during development but unavailable at evaluation time. Explain
+how the evaluation prevents information from the test set from influencing
+the method or its settings.
+
+\subsection{Design Rationale and Alternatives}
+For each major design decision, describe the alternative that a reasonable
+reader might consider. Explain why the selected option is appropriate for
+the stated problem. These explanations should be testable where possible:
+identify which experimental comparison could support or weaken each claim.
+Avoid presenting a convenient implementation choice as a demonstrated
+scientific advantage.
+
+Explain the expected trade-off between accuracy, computational cost, and
+complexity. For example, an additional component may require more memory
+or processing time even if it improves a task-specific metric. State the
+conditions under which that trade-off would be acceptable. Replace this
+generic discussion with reasoning specific to your own application and
+the resources available to its intended users.
+
+\subsection{Reproducibility and Computational Cost}
+Describe the software environment, input preparation, initialization,
+termination criteria, and sources of randomness. Report how settings are
+selected and which settings remain fixed across experiments. Distinguish
+one-time preparation costs from per-input costs, and specify whether
+reported timing includes loading data and producing the final output.
+
+When relevant, express the dominant computation in terms of input size.
+Define the variables used in that analysis and identify any simplifying
+assumptions. Complement an analytical estimate with measurements under a
+specified environment when those measurements are available. If the method
+is only proposed, explain how these quantities would be measured instead
+of supplying invented timing or memory values.

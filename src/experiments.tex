@@ -6,6 +6,35 @@ materials, inclusion criteria, baselines, evaluation metrics, and procedure.
 Explain how comparisons are made fair and how uncertainty is assessed.
 Report actual experimental conditions instead of inventing missing details.
 
+Describe the origin and relevant properties of the evaluation material.
+Explain how development and evaluation subsets are separated, including
+any grouping needed to prevent closely related examples from appearing in
+both. State the scope of the evaluation: what variation is represented and
+which operating conditions are absent. If the study uses simulations or
+constructed examples, explain how those conditions relate to the intended
+application and where the comparison may break down.
+
+Define each evaluation metric before interpreting its values. Give its
+units, preferred direction, aggregation rule, and treatment of failed or
+missing outputs. Explain why the chosen metrics reflect the research
+question. If different metrics emphasize different aspects of performance,
+state how those differences will inform the interpretation rather than
+selecting only the metric that favors the proposed approach.
+
+\subsection{Baselines and Comparison Protocol}
+Select baselines that test the contribution you actually claim. Include a
+simple reference method where useful, and explain the relevance of more
+complex alternatives. Document whether baseline implementations are reused
+or reimplemented. Specify the settings used for each method and describe
+how the development budget is made comparable across approaches.
+
+State how many independent runs or evaluation units are used and why.
+Describe how variation is summarized and identify the unit over which an
+uncertainty interval is computed. Report the same protocol for every
+comparison. Where repeated observations are related, explain how that
+dependence is accounted for. These paragraphs are prompts for a real
+protocol, not a claim that any experiment has already been conducted.
+
 \subsection{Quantitative Evaluation}
 Table~\ref{tab:results} demonstrates a compact results table.
 All entries are intentionally unfilled; dashes do not mean zero.
@@ -27,8 +56,63 @@ unsuccessful cases where relevant.
 
 \input{figures/qualitative}
 
-\subsection{Ablation or Sensitivity Analysis}
-Test the role of a design choice by changing one factor while holding other
-conditions fixed. Explain what the comparison reveals and what it cannot
-establish. If this analysis is inappropriate for your study, replace it with
-a suitable robustness check or alternative analysis.
+\subsection{Component Ablation}
+Table~\ref{tab:component_ablation} provides a component-removal study.
+Define a common reference configuration and remove one component at a
+time. Keep the input data, evaluation protocol, and unrelated settings
+fixed. Explain what replaces a disabled component so that each variant
+remains a valid method rather than a broken implementation.
+
+\input{tables/component_ablation}
+
+Interpret each comparison in terms of the component's intended role.
+Consider whether a change could arise from a different computational budget
+or training procedure rather than the component itself. If the two
+components interact, discuss what can be learned by removing both.
+Do not describe a component as necessary or beneficial until the measured
+results support that conclusion.
+
+\subsection{Design-Choice Ablation}
+Table~\ref{tab:design_ablation} illustrates a complementary comparison of
+alternative design choices. Unlike removing a component, this study changes
+how a component operates. Specify one choice at a time and hold the rest of
+the configuration fixed. Replace the generic options with meaningful
+alternatives for your method, such as an aggregation rule or representation.
+
+\input{tables/design_ablation}
+
+Report both the task metric and a relevant resource cost. Explain whether
+an apparent improvement requires additional computation, memory, or access
+to information. State the selection criterion before examining the test
+results, and use development data to choose a final configuration. Discuss
+whether multiple alternatives offer different, reasonable trade-offs.
+
+\subsection{Sensitivity and Operating Range}
+Figure~\ref{fig:sensitivity} provides a plot layout for a parameter sweep
+or robustness study. Its axes are intentionally empty; the figure contains
+no fabricated performance curve. Replace the labels with a named parameter
+and a defined metric, add units and values, and plot actual observations.
+Indicate uncertainty when repeated measurements are available.
+
+\input{figures/sensitivity}
+
+Choose a range that tests the operating assumptions of the method. Explain
+how the sampled settings were selected and why they are relevant to the
+intended application. Hold unrelated factors fixed, and report all tested
+settings rather than only a favorable subset. Identify any region where
+the method fails to produce a valid output and show how such failures are
+represented in the analysis.
+
+\subsection{Failure Cases and Summary of Evidence}
+Describe unsuccessful cases alongside successful ones. Connect each failure
+to a specific assumption or intermediate behavior, and distinguish an
+observed pattern from a speculative explanation. State what additional
+measurement would help identify the cause. Avoid using a few selected
+examples to claim a general failure rate.
+
+Close the evaluation by returning to its original questions. State which
+claims are supported, which remain uncertain, and which were not tested.
+Explain how the quantitative comparisons, qualitative examples, ablations,
+and sensitivity analysis complement one another. This synthesis should
+reflect your collected evidence rather than repeat a list of figure and
+table captions.
