@@ -9,6 +9,9 @@
 \usepackage{amsmath,amssymb}
 \usepackage{booktabs}
 \usepackage{cite}
+\usepackage{acronym}
+\input{acronyms}
+\usepackage{paper_macros}
 \usepackage[hidelinks]{hyperref}
 
 % Replace every placeholder before submission.
@@ -23,6 +26,8 @@ Email: \texttt{your.email@example.com}.}}
 \pagestyle{empty}
 
 \input{src/abstract}
+% Let the main text introduce abbreviations again after the abstract.
+\acresetall
 % First-page right-column hook, followed by a page-two full-width overview.
 \input{figures/hook}
 \input{figures/overview}

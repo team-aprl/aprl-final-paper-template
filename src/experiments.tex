@@ -25,6 +25,9 @@ state how those differences will inform the interpretation rather than
 selecting only the metric that favors the proposed approach.
 Use the metric reference to credit an adopted definition~\cite{metric}.
 Describe any deviation from that definition and its effect on comparability.
+For a suitable numerical prediction task, a metric might be
+\ac{RMSE}. Define the residuals and aggregation used to calculate
+\ac{RMSE}, and choose a different metric if it better matches your task.
 
 \subsection{Baselines and Comparison Protocol}
 Select baselines that test the contribution you actually claim. Include a
@@ -41,9 +44,12 @@ Describe how variation is summarized and identify the unit over which an
 uncertainty interval is computed. Reference a suitable reproducibility
 protocol when one informs the design~\cite{reproducibility}, while reporting
 your actual settings rather than relying on the citation for those details.
+If reporting a \ac{CI}, state its confidence level, construction method,
+and sampling unit. Explain what the \ac{CI} describes rather than treating
+it as a generic measure of variation.
 
 \subsection{Quantitative Evaluation}
-Table~\ref{tab:results} demonstrates a compact results table.
+\tabref{tab:results} demonstrates a compact results table.
 All entries are intentionally unfilled; dashes do not mean zero.
 Replace column headings with task-specific metrics and units, and indicate
 whether larger or smaller values are preferred.
@@ -57,14 +63,14 @@ section as an evaluation plan and do not present anticipated outcomes as results
 
 \subsection{Qualitative Evaluation}
 Use examples to explain behavior that a single numerical metric cannot
-capture. Figure~\ref{fig:qualitative} provides a two-panel placeholder.
+capture. \figref{fig:qualitative} provides a two-panel placeholder.
 Include informative captions, matched conditions, and both successful and
 unsuccessful cases where relevant.
 
 \input{figures/qualitative}
 
 \subsection{Component Ablation}
-Table~\ref{tab:component_ablation} provides a component-removal study.
+\tabref{tab:component_ablation} provides a component-removal study.
 Define a common reference configuration and remove one component at a
 time. Keep the input data, evaluation protocol, and unrelated settings
 fixed. Explain what replaces a disabled component so that each variant
@@ -83,7 +89,7 @@ Do not describe a component as necessary or beneficial until the measured
 results support that conclusion.
 
 \subsection{Design-Choice Ablation}
-Table~\ref{tab:design_ablation} illustrates a complementary comparison of
+\tabref{tab:design_ablation} illustrates a complementary comparison of
 alternative design choices. Unlike removing a component, this study changes
 how a component operates. Specify one choice at a time and hold the rest of
 the configuration fixed. Replace the generic options with meaningful
@@ -100,7 +106,7 @@ results, and use development data to choose a final configuration. Discuss
 whether multiple alternatives offer different, reasonable trade-offs.
 
 \subsection{Sensitivity and Operating Range}
-Figure~\ref{fig:sensitivity} provides a plot layout for a parameter sweep
+\figref{fig:sensitivity} provides a plot layout for a parameter sweep
 or robustness study. Its axes are intentionally empty; the figure contains
 no fabricated performance curve. Replace the labels with a named parameter
 and a defined metric, add units and values, and plot actual observations.

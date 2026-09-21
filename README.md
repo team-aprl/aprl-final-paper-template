@@ -40,6 +40,33 @@ All instructional paragraphs, figures, equations, tables, and citations are plac
 | `tables/design_ablation.tex` | Table III: performance/cost ablation across design alternatives |
 | `references.bib` | 15 fictional references, cited by role throughout the text — replace with real sources |
 | `ieeeconf.cls` | Shared LaTeX class providing the paper layout |
+| `acronyms.tex` | Abbreviation definitions and examples: CPU, RMSE, CI |
+| `paper_macros.sty` | Figure, table, section, and equation reference helpers |
+
+## Abbreviations and cross-references
+
+Define abbreviations in `acronyms.tex` using the `acronym` package:
+
+```tex
+\acrodef{RMSE}[RMSE]{root mean square error}
+```
+
+Use `\ac{RMSE}` in the text: the first use prints “root mean square error (RMSE)”
+and later uses print “RMSE”. Use `\acs{RMSE}` for the short form and
+`\acl{RMSE}` for the full form explicitly. `\acresetall` after the abstract
+allows the main text to introduce abbreviations independently.
+Replace the CPU, RMSE, and CI examples with terms relevant to your paper.
+
+Use the helpers in `paper_macros.sty` with existing labels:
+
+```tex
+\figref{fig:overview}       % Fig. 2
+\tabref{tab:results}        % Table I
+\secref{sec:method}         % Sec. IV
+\equref{eq:mapping}         % Eq. (1)
+```
+
+Numbers update automatically. The body and figure captions demonstrate these helpers.
 
 ## Build locally
 

@@ -40,6 +40,33 @@ IEEE 스타일의 letter 용지, 10pt, 2단 레이아웃을 사용합니다.
 | `tables/design_ablation.tex` | Table III: 설계 대안별 성능·비용 ablation |
 | `references.bib` | 본문 역할에 맞춰 인용한 가상 참고문헌 15개 — 실제 문헌으로 교체 필수 |
 | `ieeeconf.cls` | 레이아웃용 공용 LaTeX 클래스 |
+| `acronyms.tex` | CPU, RMSE, CI 등 약어 정의와 예시 |
+| `paper_macros.sty` | 그림·표·절·수식 참조 매크로 |
+
+## 약어와 교차 참조
+
+`acronym` 패키지를 사용하며 `acronyms.tex`에서 약어를 정의합니다.
+
+```tex
+\acrodef{RMSE}[RMSE]{root mean square error}
+```
+
+본문에서 `\ac{RMSE}`를 쓰면 첫 사용에는 “root mean square error (RMSE)”,
+이후에는 “RMSE”로 표시됩니다. `\acs{RMSE}`는 항상 약어만,
+`\acl{RMSE}`는 항상 전체 명칭을 표시합니다. Abstract 다음의 `\acresetall`은
+본문에서 약어를 다시 처음부터 소개하도록 합니다.
+CPU, RMSE, CI는 사용법 예시이므로 자신의 논문에 필요한 용어로 교체하세요.
+
+그림·표·절·수식은 `paper_macros.sty`의 매크로와 해당 라벨로 참조합니다.
+
+```tex
+\figref{fig:overview}       % Fig. 2
+\tabref{tab:results}        % Table I
+\secref{sec:method}         % Sec. IV
+\equref{eq:mapping}         % Eq. (1)
+```
+
+번호는 자동 갱신되며 본문과 그림 캡션에도 이 매크로를 적용했습니다.
 
 ## 로컬 컴파일
 
